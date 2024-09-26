@@ -1,0 +1,35 @@
+.options {
+  margin-top: 10px;
+  width: 300px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.but {
+  font-size: 15px;
+  background-color: black;
+  color: white;
+}
+
+.options button {
+  font-size: 20px;
+  background-color: black;
+  color: white;
+}
+
+.disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.drop {
+  margin-top: 5px;
+  margin-left: 10px;
+  padding: 10px;
+  background-color: azure;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 3;
+  width: 150px;
+}
