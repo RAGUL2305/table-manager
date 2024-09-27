@@ -33,3 +33,36 @@
   z-index: 3;
   width: 150px;
 }
+
+.onlog{
+  font-size: 20px;
+  color: brown;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+.delbutton{
+   margin-top: 10px;
+   margin-left: 250px;
+   font-size: 20px;
+   background-color:lightgreen;
+   width: 250px;
+}
+
+.yes-no button{
+    font-size: 20px;
+    color: white;
+    background-color: black;
+    margin: 30px;
+   
+}
+
+.show-details{
+   width: 400px;
+   background-color: cadetblue;
+   border: 5px;
+   border-radius: 30px;
+   box-shadow: 30px;
+   margin-left:450px;
+
+}
