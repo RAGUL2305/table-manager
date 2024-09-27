@@ -141,16 +141,7 @@ const reducer = produce((state: State, action: Action) => {
         (option) => option.id !== action.payload
       );
       break;
-    case "REMOVE_CHECKED_ITEMS":
-      state.values = state.values.filter(
-        (option) => !state.checkedItems.includes(option.id)
-      );
-      state.deleteDetails = !state.deleteDetails;
-      break;
-
-    case "CLOSE_DELETE":
-      state.deleteDetails = !state.deleteDetails;
-      break;
+   
 
     case "MAKE_DROPDOWN":
       state.drop = !state.drop;
@@ -162,12 +153,11 @@ const reducer = produce((state: State, action: Action) => {
       } else {
         state.view = action.payload;
       }
-      state.selectedData =
-        state.checkedItems.length === 1
-          ? state.values.filter((detail) =>
-              state.checkedItems.includes(detail.id)
-            )
-          : [];
+      state.selectedData = state.checkedItems
+        ? state.values.filter((detail) =>
+            state.checkedItems.includes(detail.id)
+          )
+        : [];
       switch (state.view) {
         case "details":
           state.selectedData = state.selectedData;
@@ -182,6 +172,20 @@ const reducer = produce((state: State, action: Action) => {
           break;
       }
       break;
+
+      case "REMOVE_CHECKED_ITEMS":
+        state.values = state.values.filter(
+          (option) => !state.checkedItems.includes(option.id)
+        );
+        state.deleteDetails = state.deleteDetails;
+        state.view=''
+        break;
+
+      case "CLOSE_DELETE":
+
+          state.deleteDetails = false;
+          state.view='';
+        break;
   }
 });
 

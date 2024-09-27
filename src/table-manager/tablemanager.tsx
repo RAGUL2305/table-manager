@@ -167,31 +167,32 @@ function TableManager(props: Data) {
         <button onClick={() => setView("delete")}>Delete</button>
       </div>
       <div>
-        {view === "details" && selectedData.length !== 0 && (
-          <div>
+        {view === "details" && selectedData.length === 1 && (
+          <div className="show-details">
             <h3>Details for : {selectedData[0].name}</h3>
             <p>{selectedData[0].description}</p>
             <p>It is used to cook:{selectedData[0].shouldcook}</p>
             <p>Nutritions : {selectedData[0].nutritions}</p>
             <p>We should take {selectedData[0].maxintakeperday} per day</p>
             <a href={selectedData[0].link}>
-              <button>Learn More</button>
+              <button className="but">Learn More</button>
             </a>
           </div>
         )}
       </div>
       <div>
-        {view === "log" && selectedData.length !== 0 && (
-          <div>SEE THE CONSOLE</div>
+        {view === "log" && selectedData.length === 1 && (
+          <div className="onlog">SEE THE CONSOLE</div>
         )}
       </div>
       <div>
-        {view === "delete" && selectedData.length !== 0 && (
-          <div>
+        {view === "delete" && selectedData.length > 0 && (
+          <div className="delbutton"> 
             Do you want to delete all selectedItems?
-            <div>
+            <div className="yes-no">
               <button onClick={handleCheckedRemoveClick}>Yes</button>
               <button onClick={handleNoClick}>No</button>
+              
             </div>
           </div>
         )}
